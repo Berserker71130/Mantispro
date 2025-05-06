@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import Layout from "./Layout";
 function Income() {
   return (
-    <body className="bg-gray-100 font-sans antialiased">
-      <div className="p-6">
+    <Layout>
+      <div className="p-6 bg-gray-200 font-sans antialiased">
         <div className="mb-4 text-sm text-gray-500">
           <a href="#" className="hover:underline">
             Home
@@ -170,32 +170,32 @@ function Income() {
           </div>
           <hr className=" mb-6 border-t-2 border-gray-200" />
           <div className="mt-6 flex justify-center space-x-4">
-            <button className="bg-gray-100 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Previous
             </button>
-            <button className="bg-gray-200 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               Next
             </button>
           </div>
         </div>
-        <footer className="bg-gray-100 py-4 text-center text-gray-600 text-sm">
-          <div className="container mx-auto flex justify-between items-center">
-            <span>Copyright © Sohclick Technology Ltd</span>
-            <div>
-              <Link to="/dashboard" className="mr-4 hover:underline">
-                Home
-              </Link>
-              <a href="/privacy" className="mr-4 hover:underline">
-                Privacy
-              </a>
-              <a href="/contact" className="mr-4 hover:underline">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </footer>
       </div>
-    </body>
+      <footer className="bg-gray-100 py-4 text-center text-gray-600 text-sm">
+        <div className="container mx-auto flex justify-between items-center">
+          <span>Copyright © Sohclick Technology Ltd</span>
+          <div>
+            <Link to="/dashboard" className="mr-4 hover:underline">
+              Home
+            </Link>
+            <a href="/privacy" className="mr-4 hover:underline">
+              Privacy
+            </a>
+            <a href="/contact" className="mr-4 hover:underline">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </footer>
+    </Layout>
   );
 }
 export default Income;
