@@ -10,8 +10,8 @@ import {
   FiUsers,
   FiBell,
 } from "react-icons/fi";
-import { FaUserCircle } from "react-icons/fa";
-import react from "react";
+import { FaUser, FaUserCircle, FaUsers } from "react-icons/fa";
+import { Outlet, Link } from "react-router-dom";
 function Dashboard() {
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
@@ -50,21 +50,21 @@ function Dashboard() {
           <nav className="flex-1">
             <ul className="list-none p-0">
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-500 hover:text-blue-500 font-semibold text-sm hover:text-blue-500"
+                <Link
+                  to="/dashboard/default"
+                  className="block py-2 px-3 rounded hover:bg-blue-200"
                 >
                   Dashboard
-                </a>
+                </Link>
 
                 <ul className="list-none p-0 ml-2">
-                  <li className="rounded-md bg-blue-50 text-blue-700 font-semibold">
-                    <a
-                      href="#"
+                  <li className="rounded-md bg-blue-50 text-gray-700 font-semibold">
+                    <Link
+                      to="/dashboard/default"
                       className="block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                     >
-                      <FiClock className="mr-2" /> Default
-                    </a>
+                      <FiClock className="h-5 w-5 mr-2" /> Default
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -79,30 +79,30 @@ function Dashboard() {
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/customers"
+                  className="text-gray-600 block py-2 px-3 rounded hover:text-blue-400 flex items-center font-semibold"
                 >
-                  <FiUsers className="mr-2" /> Customers
-                </a>
+                  <FiUsers className="h-5 w-5 mr-2" /> Customers
+                </Link>
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/income"
+                  className="text-gray-600 block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                 >
-                  <FiTrendingUp className="mr-2" /> Income
-                </a>
+                  <FiTrendingUp className="h-5 w-5 mr-2" /> Income
+                </Link>
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/expenses"
+                  className="text-gray-600 block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                 >
-                  <FiTrendingDown className="mr-2" /> Expenses
-                </a>
+                  <FiTrendingDown className="h-5 w-5 mr-2" /> Expenses
+                </Link>
               </li>
 
               <li className="mb-2">
@@ -115,12 +115,12 @@ function Dashboard() {
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/dashboard/salesExpenses"
+                  className="text-gray-600 block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                 >
-                  <FiSettings className="mr-2" /> Sales Expenses
-                </a>
+                  <FiSettings className="h-5 w-5 mr-2" /> Sales Expenses
+                </Link>
               </li>
 
               <li className="mb-2">
@@ -133,27 +133,28 @@ function Dashboard() {
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/dashboard/uploadExpenses"
+                  className="text-gray-600 block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                 >
-                  <FiSettings className="mr-2" /> Upload Expenses
-                </a>
+                  <FiSettings className="h-5 w-5 mr-2" /> Upload Expenses
+                </Link>
               </li>
 
               <li className="mb-2">
-                <a
-                  href="#"
-                  className="block py-2 pl-0 text-gray-700 hover:text-blue-500 font-semibold flex items-center"
+                <Link
+                  to="/dashboard/uploadIncome"
+                  className="text-gray-600 block py-2 px-4  hover:text-blue-500 font-semibold flex items-center"
                 >
-                  <FiSettings className="mr-2" /> Upload Income
-                </a>
+                  <FiSettings className="h-5 w-5 mr-2" /> Upload Income
+                </Link>
               </li>
             </ul>
           </nav>
         </aside>
 
         <main className="p-6">
+          <Outlet />
           <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 mb-6">
             <div className="bg-white border border-gray-200 rounded-md p-4">
               <h3 className="text-sm font-semibold text-gray-600 mb-1">
